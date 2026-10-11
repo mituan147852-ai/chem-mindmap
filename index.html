@@ -1,1 +1,356 @@
-<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>化学思维导图</title><style>body{font-family:sans-serif;max-width:560px;margin:60px auto;padding:20px;text-align:center;background:#f5f8ff}a{display:block;margin:20px 0;padding:24px;border-radius:16px;background:#fff;box-shadow:0 4px 14px #0001;font-size:22px;color:#2a5bd7;text-decoration:none}</style></head><body><h1>🧪 化学思维导图</h1><a href="初中化学思维导图.html">📘 初中化学知识全景</a><a href="高一上化学思维导图.html">📗 高一上学期（必修一）</a><a href="高一下化学思维导图.html">📙 高一下学期（必修二）</a></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>北京初高中数理化思维导图 · 学习站</title>
+<meta name="description" content="按北京课程进度整理的初一至高三数学、物理、化学思维导图，按学期查找，手机/iPad/电脑均可使用。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='6' fill='%236C5CE7'/%3E%3Cg fill='none' stroke='%230984E3' stroke-width='3'%3E%3Cellipse cx='32' cy='32' rx='28' ry='10'/%3E%3Cellipse cx='32' cy='32' rx='28' ry='10' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='28' ry='10' transform='rotate(120 32 32)'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+*{box-sizing:border-box}
+:root{
+  --ink:#2b2d42;--muted:#6b7090;--bg:#f3f5fb;--card:#fff;--line:#e4e8f3;
+  --math:#0984E3;--math2:#74b9ff;
+  --phys:#E17055;--phys2:#fdcb6e;
+  --chem:#00B894;--chem2:#55efc4;
+  --brand:#6C5CE7;--dark:#1f2240;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;min-height:100vh;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit}
+
+/* ===== 背景漂浮小图标 ===== */
+.floaters{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fl{position:absolute;opacity:.13;color:var(--c,#6C5CE7);font-weight:800;font-family:"Times New Roman",Georgia,serif;font-style:italic;white-space:nowrap;animation:drift var(--d,22s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+.fl svg{display:block}
+@keyframes drift{
+  0%{transform:translate(0,0) rotate(0)}
+  50%{transform:translate(var(--x,30px),calc(var(--y,-40px)*.5)) rotate(calc(var(--r,20deg)*.5))}
+  100%{transform:translate(calc(var(--x,30px)*-.4),var(--y,-40px)) rotate(var(--r,20deg))}
+}
+.spin{animation:spin 14s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ===== 头部 ===== */
+header{position:relative;z-index:1;background:linear-gradient(135deg,#6C5CE7 0%,#0984E3 45%,#00B894 100%);color:#fff;padding:44px 18px 72px;text-align:center;overflow:hidden}
+header .glow{position:absolute;border-radius:50%;filter:blur(2px);background:radial-gradient(circle,rgba(255,255,255,.28),rgba(255,255,255,0) 70%)}
+header .g1{width:420px;height:420px;left:-120px;top:-160px}
+header .g2{width:360px;height:360px;right:-100px;bottom:-200px}
+.hico{position:absolute;opacity:.18}
+.hico.a{left:4%;top:18px;width:120px}
+.hico.b{right:5%;top:30px;width:110px}
+.badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:3px 14px;font-size:14px;backdrop-filter:blur(4px)}
+h1{font-size:clamp(26px,5.2vw,46px);margin:14px 0 6px;letter-spacing:1px;text-shadow:0 3px 10px rgba(0,0,0,.2);line-height:1.25}
+h1 .s{display:inline-block}
+.lead{font-size:clamp(15px,2.4vw,19px);margin:0 auto 18px;opacity:.95;max-width:720px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chips span{background:#fff;color:#333;border-radius:12px;padding:6px 14px;font-size:14px;box-shadow:0 3px 10px rgba(0,0,0,.12);display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--c);display:inline-block}
+header .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px;display:block}
+
+/* ===== 筛选条 ===== */
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 2px 14px rgba(30,40,90,.08)}
+.bar-in{max-width:1180px;margin:0 auto;padding:10px 14px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center}
+.fgrp{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.fgrp>b{font-size:13px;color:var(--muted);font-weight:600;margin-right:2px}
+.seg{display:inline-flex;background:#eef1f8;border-radius:99px;padding:3px;gap:2px}
+.seg button{border:none;background:none;cursor:pointer;padding:6px 14px;border-radius:99px;font-size:14px;color:#454a6b;transition:background .2s,color .2s,box-shadow .2s;white-space:nowrap;-webkit-tap-highlight-color:transparent;min-height:34px}
+.seg button:hover{background:#dfe4f3}
+.seg button.on{background:var(--c,#6C5CE7);color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+.seg button:focus-visible{outline:3px solid #a29bfe;outline-offset:1px}
+.stat{font-size:13px;color:var(--muted)}
+.stat b{color:var(--chem)}
+
+/* ===== 主体 ===== */
+main{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:8px 14px 40px}
+.stage{margin:26px 0 8px}
+.stage-h{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+.stage-h .ic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:20px;background:var(--c);box-shadow:0 6px 16px rgba(0,0,0,.15);flex:none}
+.stage-h h2{margin:0;font-size:clamp(20px,3vw,26px)}
+.stage-h p{margin:0;color:var(--muted);font-size:14px}
+.stage-h .ln{flex:1;height:2px;background:linear-gradient(90deg,var(--c),transparent);opacity:.35;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+
+.card{position:relative;background:var(--card);border-radius:22px;padding:16px 16px 14px;box-shadow:0 6px 24px rgba(30,40,90,.08);border:1px solid rgba(255,255,255,.7);transition:transform .25s ease,box-shadow .25s ease;overflow:hidden;animation:pop .45s ease both;animation-delay:var(--i,0s)}
+.card:before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:linear-gradient(90deg,var(--math),var(--phys),var(--chem))}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(30,40,90,.14)}
+.card.review{background:linear-gradient(160deg,#fff 60%,#f3efff)}
+.card.review:before{background:linear-gradient(90deg,#6C5CE7,#fd79a8,#fdcb6e)}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.ch{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.num{width:50px;height:50px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#fff;background:linear-gradient(135deg,var(--brand),#0984E3);box-shadow:0 4px 12px rgba(108,92,231,.35)}
+.stage-senior .num{background:linear-gradient(135deg,#0984E3,#00B894);box-shadow:0 4px 12px rgba(0,184,148,.35)}
+.card.review .num{background:linear-gradient(135deg,#6C5CE7,#fd79a8)}
+.ch h3{margin:0;font-size:20px;line-height:1.2}
+.ch small{display:block;color:var(--muted);font-size:13px}
+.ch .tag{margin-left:auto;font-size:12px;padding:2px 10px;border-radius:99px;background:#eef1f8;color:#5a6085;white-space:nowrap}
+.ch .tag.has{background:#e3fbf4;color:#00896d}
+
+.subs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sb{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;border-radius:16px;padding:12px 6px 10px;min-height:92px;text-align:center;transition:transform .2s ease,box-shadow .2s ease,filter .2s;-webkit-tap-highlight-color:transparent}
+.sb .si{width:34px;height:34px;display:block}
+.sb .tx{display:flex;flex-direction:column;align-items:center;line-height:1.35}
+.sb .sn{font-weight:700;font-size:16px}
+.sb .ss{font-size:12px;opacity:.9}
+.sb.live{color:#fff;background:linear-gradient(140deg,var(--c),var(--c2));box-shadow:0 6px 16px -4px var(--c)}
+.sb.live:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 22px -4px var(--c);filter:saturate(1.1)}
+.sb.live:active{transform:scale(.97)}
+.sb.live:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+.sb.live .go{position:absolute;right:8px;top:6px;font-size:13px;opacity:.85;transition:transform .2s}
+.sb.live:hover .go{transform:translateX(3px)}
+.sb.live .si{animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-3px)}}
+.sb.soon{background:#f1f3f8;color:#9aa0b8;cursor:not-allowed;border:1px solid #e3e6ef}
+.sb.soon .si{filter:grayscale(1);opacity:.55}
+.sb.soon .tg{position:absolute;right:6px;top:6px;font-size:11px;padding:0 7px;border-radius:99px;background:#fff;color:#8a90aa;border:1px solid #dde1ec;line-height:18px}
+.sb.none{background:repeating-linear-gradient(135deg,#fafbfd 0 8px,#f3f5fa 8px 16px);color:#b6bbcd;border:1.5px dashed #dde1ec}
+.sb.none .sn{font-weight:600;font-size:14px}
+.sb.none .si{opacity:.3;filter:grayscale(1)}
+.sb.hid{display:none}
+.subs.one{grid-template-columns:1fr}
+.subs.one .sb{flex-direction:row;gap:12px;min-height:64px;justify-content:flex-start;padding:10px 16px;text-align:left}
+.subs.one .sb .tx{align-items:flex-start}
+
+.empty{display:none;text-align:center;color:var(--muted);padding:40px 10px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:30px 0 6px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:22px;height:14px;border-radius:5px;vertical-align:-2px;margin-right:6px}
+footer{position:relative;z-index:1;text-align:center;color:#8a8fae;font-size:13px;padding:10px 14px 34px}
+
+/* ===== 响应式 ===== */
+@media (max-width:860px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+@media (max-width:640px){
+  header{padding:34px 14px 62px}
+  .hico{display:none}
+  .grid{grid-template-columns:1fr}
+  .bar-in{padding:8px 8px;gap:6px}
+  .fgrp>b{display:none}
+  .seg button{padding:6px 12px;font-size:13.5px}
+  .stat{width:100%;text-align:center}
+  .card{padding:14px 12px 12px;border-radius:18px}
+  .sb{min-height:84px;padding:10px 4px 8px}
+  .sb .sn{font-size:15px}
+  .sb .ss{font-size:11.5px}
+}
+@media (max-width:360px){
+  .sb.none .sn{font-size:12.5px}
+}
+
+/* ===== 尊重减少动态 ===== */
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .card:hover,.sb.live:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 背景漂浮：原子 / 公式 / 光线 -->
+<div class="floaters" aria-hidden="true" id="floaters"></div>
+
+<header>
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <svg class="hico a spin" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="4"><ellipse cx="50" cy="50" rx="44" ry="15"/><ellipse cx="50" cy="50" rx="44" ry="15" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="15" transform="rotate(120 50 50)"/></g><circle cx="50" cy="50" r="8" fill="#fff"/></svg>
+  <svg class="hico b" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><path d="M38 10h24M43 10v28L18 84a6 6 0 0 0 5 8h54a6 6 0 0 0 5-8L57 38V10"/><path d="M28 66h44"/></g><circle cx="45" cy="78" r="4" fill="#fff"/><circle cx="58" cy="72" r="3" fill="#fff"/></svg>
+  <span class="badge">北京课程进度 · 按学期整理</span>
+  <h1><span class="s">北京初高中</span><span class="s">数理化思维导图</span></h1>
+  <p class="lead">从初一到高三，按学期找到对应的数学、物理、化学知识导图。一张图把一个学期串起来，复习、预习都好用。</p>
+  <div class="chips">
+    <span><i class="dot" style="--c:var(--math)"></i>数学 · 初一起</span>
+    <span><i class="dot" style="--c:var(--phys)"></i>物理 · 初二起</span>
+    <span><i class="dot" style="--c:var(--chem)"></i>化学 · 初三起</span>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 28C240 0 480 46 720 24S1200 4 1440 26V46H0Z" fill="#f3f5fb"/></svg>
+</header>
+
+<nav class="bar" aria-label="筛选">
+  <div class="bar-in">
+    <div class="fgrp"><b>学段</b>
+      <div class="seg" id="fStage" role="group" aria-label="学段筛选">
+        <button data-v="all" class="on" aria-pressed="true">全部</button>
+        <button data-v="junior" aria-pressed="false">初中</button>
+        <button data-v="senior" aria-pressed="false">高中</button>
+      </div>
+    </div>
+    <div class="fgrp"><b>学科</b>
+      <div class="seg" id="fSubj" role="group" aria-label="学科筛选">
+        <button data-v="all" class="on" aria-pressed="true">全部</button>
+        <button data-v="math" style="--c:var(--math)" aria-pressed="false">数学</button>
+        <button data-v="phys" style="--c:var(--phys)" aria-pressed="false">物理</button>
+        <button data-v="chem" style="--c:var(--chem)" aria-pressed="false">化学</button>
+      </div>
+    </div>
+    <div class="stat" id="stat"></div>
+  </div>
+</nav>
+
+<main id="main">
+  <p class="empty" id="empty">当前筛选下暂无内容，换个学科或学段看看吧～</p>
+</main>
+
+<div class="legend" style="position:relative;z-index:1">
+  <span><i style="background:linear-gradient(140deg,#00B894,#55efc4)"></i>已上线，点击进入</span>
+  <span><i style="background:#f1f3f8;border:1px solid #dde1ec"></i>制作中</span>
+  <span><i style="background:repeating-linear-gradient(135deg,#fafbfd 0 4px,#eceff6 4px 8px);border:1.5px dashed #dde1ec"></i>本学期无此科</span>
+</div>
+<footer>北京初高中数理化思维导图 · 内容按北京常用教材进度整理，仅供学习参考</footer>
+
+<script>
+/* =====================================================================
+ * 链接数据表（只需改这里）
+ * ---------------------------------------------------------------------
+ * 每个学期一项；math / phys / chem 三个学科：
+ *   null                      → 本学期无此科（显示“本学期无此科”灰格）
+ *   { href:'文件.html#锚点', status:'live' }  → 已上线（彩色、可点击）
+ *   { href:'文件.html#锚点', status:'soon' }  → 制作中（灰色、不可点）
+ *   href 可留空 ''，status 为 'soon' 时不会被使用。
+ * 把某项改为已上线：把它的 status 从 'soon' 改成 'live'（并确认 href 正确）。
+ * href 写相对“站点根目录”的文件名；本页放在子目录 home_new/ 预览时
+ * 会自动加 ../ 前缀（见下方 BASE），部署到根目录时则直接使用。
+ * ===================================================================== */
+const SITE = [
+  // ---------- 初中 ----------
+  { id:'t7a', name:'初一上', grade:'七年级 · 上学期', stage:'junior',
+    math:{ href:'初中数学思维导图.html#t7a', status:'soon' }, phys:null, chem:null },
+  { id:'t7b', name:'初一下', grade:'七年级 · 下学期', stage:'junior',
+    math:{ href:'初中数学思维导图.html#t7b', status:'soon' }, phys:null, chem:null },
+  { id:'t8a', name:'初二上', grade:'八年级 · 上学期', stage:'junior',
+    math:{ href:'初中数学思维导图.html#t8a', status:'soon' },
+    phys:{ href:'初中物理思维导图.html#t8a', status:'soon' }, chem:null },
+  { id:'t8b', name:'初二下', grade:'八年级 · 下学期', stage:'junior',
+    math:{ href:'初中数学思维导图.html#t8b', status:'soon' },
+    phys:{ href:'初中物理思维导图.html#t8b', status:'soon' }, chem:null },
+  { id:'t9a', name:'初三上', grade:'九年级 · 上学期', stage:'junior',
+    math:{ href:'初中数学思维导图.html#t9a', status:'soon' },
+    phys:{ href:'初中物理思维导图.html#t9a', status:'soon' },
+    chem:{ href:'初中化学思维导图.html', status:'live' } },
+  { id:'t9b', name:'初三下', grade:'九年级 · 下学期 · 中考', stage:'junior',
+    math:{ href:'初中数学思维导图.html#t9b', status:'soon' },
+    phys:{ href:'初中物理思维导图.html#t9b', status:'soon' },
+    chem:{ href:'初中化学思维导图.html', status:'live' } },
+  // ---------- 高中 ----------
+  { id:'g10a', name:'高一上', grade:'高一 · 上学期', stage:'senior',
+    math:{ href:'', status:'soon' }, phys:{ href:'', status:'soon' },
+    chem:{ href:'高一上化学思维导图.html', status:'live' } },
+  { id:'g10b', name:'高一下', grade:'高一 · 下学期', stage:'senior',
+    math:{ href:'', status:'soon' }, phys:{ href:'', status:'soon' },
+    chem:{ href:'高一下化学思维导图.html', status:'live' } },
+  { id:'g11a', name:'高二上', grade:'高二 · 上学期', stage:'senior',
+    math:{ href:'', status:'soon' }, phys:{ href:'', status:'soon' }, chem:{ href:'', status:'soon' } },
+  { id:'g11b', name:'高二下', grade:'高二 · 下学期', stage:'senior',
+    math:{ href:'', status:'soon' }, phys:{ href:'', status:'soon' }, chem:{ href:'', status:'soon' } },
+  { id:'g12', name:'高三', grade:'高三 · 全年 · 备战高考', stage:'senior', review:true,
+    math:{ href:'', status:'soon' }, phys:{ href:'', status:'soon' }, chem:{ href:'', status:'soon' } },
+];
+
+/* 本页在 home_new/ 子目录预览时，链接指向上一级；部署到根目录时为空 */
+const BASE = /\/home_new\/(index\.html)?$/.test(decodeURIComponent(location.pathname)) ? '../' : '';
+
+/* ===================== 以下为渲染逻辑，一般无需改动 ===================== */
+const SUBJ = {
+  math:{ name:'数学', c:'var(--math)', c2:'var(--math2)',
+    icon:'<svg class="si" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M8 32 32 8"/><path d="M6 12h10M11 7v10"/><path d="M24 30h10"/><circle cx="29" cy="25" r="1.6" fill="currentColor" stroke="none"/><circle cx="29" cy="35" r="1.6" fill="currentColor" stroke="none"/></svg>' },
+  phys:{ name:'物理', c:'var(--phys)', c2:'var(--phys2)',
+    icon:'<svg class="si" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4 10 22h9l-3 14 14-20h-9l3-12z"/></svg>' },
+  chem:{ name:'化学', c:'var(--chem)', c2:'var(--chem2)',
+    icon:'<svg class="si" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h10M17 4v11L7 33a3 3 0 0 0 3 4h20a3 3 0 0 0 3-4L23 15V4"/><path d="M12 26h16"/></svg>' },
+};
+const STAGES = {
+  junior:{ name:'初中', sub:'初一 → 初三 · 中考', c:'linear-gradient(135deg,#6C5CE7,#0984E3)', ic:'初' },
+  senior:{ name:'高中', sub:'高一 → 高三 · 高考', c:'linear-gradient(135deg,#0984E3,#00B894)', ic:'高' },
+};
+const state = { stage:'all', subj:'all' };
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+
+function btn(sem, k){
+  const S = SUBJ[k], it = sem[k], st = `--c:${S.c};--c2:${S.c2}`;
+  if (!it) return `<div class="sb none" data-k="${k}" style="${st}" aria-label="${sem.name}${S.name}：本学期无此科">${S.icon}<span class="tx"><span class="sn">${S.name}</span><span class="ss">本学期无此科</span></span></div>`;
+  if (it.status === 'live' && it.href)
+    return `<a class="sb live" data-k="${k}" style="${st}" href="${esc(BASE + it.href)}">${S.icon}<span class="tx"><span class="sn">${S.name}</span><span class="ss">思维导图</span></span><span class="go">→</span></a>`;
+  return `<div class="sb soon" data-k="${k}" style="${st}" aria-disabled="true" title="制作中，敬请期待">${S.icon}<span class="tx"><span class="sn">${S.name}</span><span class="ss">敬请期待</span></span><span class="tg">制作中</span></div>`;
+}
+
+function render(){
+  const main = document.getElementById('main');
+  let html = '', i = 0;
+  for (const sk of ['junior','senior']){
+    const st = STAGES[sk], sems = SITE.filter(s => s.stage === sk);
+    html += `<section class="stage stage-${sk}" data-stage="${sk}"><div class="stage-h" style="--c:${st.c}"><div class="ic" style="background:${st.c}">${st.ic}</div><div><h2>${st.name}</h2><p>${st.sub}</p></div><div class="ln" style="background:${sk==='junior'?'linear-gradient(90deg,#6C5CE7,transparent)':'linear-gradient(90deg,#00B894,transparent)'}"></div></div><div class="grid">`;
+    for (const s of sems){
+      const live = ['math','phys','chem'].filter(k => s[k] && s[k].status === 'live').length;
+      const num = { t7a:'7上',t7b:'7下',t8a:'8上',t8b:'8下',t9a:'9上',t9b:'9下',g10a:'高一',g10b:'高一',g11a:'高二',g11b:'高二',g12:'高三' }[s.id] || s.name;
+      html += `<article class="card${s.review?' review':''}" id="${s.id}" data-id="${s.id}" style="--i:${(i++*0.05).toFixed(2)}s">
+        <div class="ch"><div class="num">${num}</div><div><h3>${s.name}${s.review?'<span style="font-size:14px;color:#6C5CE7;font-weight:600"> · 一轮复习</span>':''}</h3><small>${s.grade}</small></div>
+        <span class="tag${live?' has':''}">${live?`已上线 ${live} 科`:'制作中'}</span></div>
+        <div class="subs">${btn(s,'math')}${btn(s,'phys')}${btn(s,'chem')}</div></article>`;
+    }
+    html += `</div></section>`;
+  }
+  main.insertAdjacentHTML('afterbegin', html);
+  const all = SITE.flatMap(s => ['math','phys','chem'].map(k => s[k]).filter(Boolean));
+  document.getElementById('stat').innerHTML = `已上线 <b>${all.filter(x=>x.status==='live').length}</b> / 共 ${all.length} 个学期·学科导图`;
+}
+
+function apply(){
+  let shown = 0;
+  document.querySelectorAll('.stage').forEach(sec => {
+    const okStage = state.stage === 'all' || state.stage === sec.dataset.stage;
+    let n = 0;
+    sec.querySelectorAll('.card').forEach(card => {
+      const sem = SITE.find(s => s.id === card.dataset.id);
+      const okSubj = state.subj === 'all' || !!sem[state.subj];
+      const vis = okStage && okSubj;
+      card.style.display = vis ? '' : 'none';
+      if (vis) n++;
+      card.querySelector('.subs').classList.toggle('one', state.subj !== 'all');
+      card.querySelectorAll('.sb').forEach(b => b.classList.toggle('hid', state.subj !== 'all' && b.dataset.k !== state.subj));
+    });
+    sec.style.display = n ? '' : 'none';
+    shown += n;
+  });
+  document.getElementById('empty').style.display = shown ? 'none' : 'block';
+  const q = new URLSearchParams();
+  if (state.stage !== 'all') q.set('stage', state.stage);
+  if (state.subj !== 'all') q.set('subj', state.subj);
+  history.replaceState(null, '', (q.toString() ? '?' + q : location.pathname) + location.hash);
+}
+
+function bindSeg(id, key){
+  const g = document.getElementById(id);
+  const set = v => { state[key] = v; g.querySelectorAll('button').forEach(b => { const on = b.dataset.v === v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); apply(); };
+  g.addEventListener('click', e => { const b = e.target.closest('button'); if (b) set(b.dataset.v); });
+  return set;
+}
+
+function floaters(){
+  const box = document.getElementById('floaters');
+  const atom = '<svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="none" stroke="currentColor" stroke-width="5"><ellipse cx="50" cy="50" rx="44" ry="15"/><ellipse cx="50" cy="50" rx="44" ry="15" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="15" transform="rotate(120 50 50)"/></g><circle cx="50" cy="50" r="9" fill="currentColor"/></svg>';
+  const ray = '<svg viewBox="0 0 120 60" width="100%" height="100%"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M4 56 60 6l56 50"/><path d="M60 6v54" stroke-dasharray="5 6"/></g><path d="M96 38l20 18-26-4z" fill="currentColor"/></svg>';
+  const hex = '<svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="none" stroke="currentColor" stroke-width="5"><path d="M50 8 86 29v42L50 92 14 71V29z"/><path d="M50 20 76 35v30L50 80" /></g></svg>';
+  const wave = '<svg viewBox="0 0 140 40" width="100%" height="100%"><path d="M2 20c12-24 24-24 34 0s22 24 34 0 22-24 34 0 22 24 34 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>';
+  const items = [
+    {h:atom,w:90,x:6,y:22,c:'#6C5CE7'},{h:'E = mc²',f:30,x:80,y:14,c:'#E17055'},
+    {h:'H₂O',f:34,x:16,y:58,c:'#00B894'},{h:ray,w:110,x:72,y:46,c:'#fdcb6e'},
+    {h:'π',f:56,x:46,y:30,c:'#0984E3'},{h:hex,w:70,x:88,y:76,c:'#00B894'},
+    {h:'∫ f(x)dx',f:26,x:30,y:86,c:'#0984E3'},{h:wave,w:120,x:56,y:68,c:'#E17055'},
+    {h:'F = ma',f:28,x:4,y:82,c:'#E17055'},{h:atom,w:60,x:62,y:90,c:'#00B894'},
+    {h:'a² + b² = c²',f:24,x:36,y:8,c:'#6C5CE7'},{h:'NaCl',f:28,x:90,y:34,c:'#00B894'},
+  ];
+  box.innerHTML = items.map((t,i) => {
+    const d = 18 + (i*7)%14, x = ((i%2)?-1:1)*(20+i*4), y = -(30+(i*11)%40), r = ((i%3)-1)*18;
+    const size = t.w ? `width:${t.w}px;height:${t.w*(t.h===ray?0.5:t.h===wave?0.3:1)}px;` : `font-size:${t.f}px;`;
+    return `<div class="fl" style="left:${t.x}%;top:${t.y}%;${size}--c:${t.c};--d:${d}s;--dl:-${i*2}s;--x:${x}px;--y:${y}px;--r:${r}deg">${t.h}</div>`;
+  }).join('');
+}
+
+render(); floaters();
+const setStage = bindSeg('fStage','stage'), setSubj = bindSeg('fSubj','subj');
+const q0 = new URLSearchParams(location.search);
+if (['junior','senior'].includes(q0.get('stage'))) setStage(q0.get('stage'));
+if (['math','phys','chem'].includes(q0.get('subj'))) setSubj(q0.get('subj'));
+apply();
+</script>
+</body>
+</html>
